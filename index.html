@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    body{
+        background-image: url(Indieground_FoldedPaper_Textures_01.jpg);
+    }
+</style>
+</head>
+<body>
+           
+    <h1 id="221" style="margin-left: 760px;">MID YEAR EXAM</h1>
+    <body>		
+     <fieldset  style="width:600px">
+         <legend><b>Student Input Section:</b></legend>
+         <label for="">Name:</label><input placeholder="Type your name" type="text" id="txtName"> &nbsp;&nbsp;
+         Class:<input placeholder="Your Class" type="text" id="txtClass"> <br/><br/>
+         <table >
+             <tr><td>English</td><td><input placeholder="input you marks" type="number" id="txtEnglish"></td></tr>
+             <tr><td>Urdu</td><td><input type="number" id="txtUrdu" placeholder="input you marks"></td></tr>
+             <tr><td>Maths</td><td><input type="number" id="txtMaths" placeholder="input you marks"></td></tr>
+             <tr><td>Science</td><td><input type="number" id="txtScience" placeholder="input you marks"></td></tr>	
+             <tr><td>Isl</td><td><input type="number" id="txtIsl" placeholder="input you marks"></td></tr>
+             <tr><td>Chem</td><td><input type="number" id="txtChem" placeholder="input you marks"></td></tr>
+
+         </table><br/><br/>
+         <input class="wee" type="button" value="Get Result" onClick="getReport()">
+     </fieldset>
+     
+         <h2 style="margin-left: 825px;" class="rep" style="margin-left: 200px;">Report Card</h2>
+         
+         <div id="123e">
+         <table style="border:3px solid ;">
+             <tr><td>Name</td><td><input type="text" id="txtStudentName" readonly></td></tr>
+             <tr><td>Class</td><td><input type="text" id="txtStudentClass" readonly></td></tr>
+             <tr><td>Total Marks</td><td><input type="text" id="txtTotalMarks" readonly></td></tr>
+             <tr><td>Percentage</td><td><input type="text" id="txtPercentage" readonly></td></tr>
+             <tr><td>Grade</td><td><input type="text" id="txtGrade" readonly></td></tr>
+             <tr><td>Remarks</td><td><input type="text" id="txtResult" readonly></td></tr>
+         </table>
+     </div>
+<title>Student Results</title>
+
+<script type="text/javascript">
+
+function getReport(){
+
+        
+
+         //read the marks
+         var eng = document.getElementById('txtEnglish').value;
+         var Urdu = document.getElementById('txtUrdu').value;
+         var maths = document.getElementById('txtMaths').value;
+         var science = document.getElementById('txtScience').value;
+         var Isl = document.getElementById('txtIsl').value;
+         var Chem = document.getElementById('txtChem').value;
+
+         
+         //calculate the total marks 
+         var totalMarks = parseInt(eng) + parseInt(Urdu) + parseInt(maths)+ parseInt(science) + parseInt(Isl) + parseInt(Chem) ;
+         
+         //get the Percentage
+         var percentage = totalMarks*100/600;	
+         
+         
+     
+         
+         //find the grade and result using if and else		
+
+         if(percentage>100 || percentage<0){
+            document.getElementById("txtGrade").value=("Please enter valid numbers")
+            document.getElementById("txtResult").value=("copied ☕ ")
+}
+
+if(percentage >= 90 && percentage <= 100){
+    document.getElementById("txtgrade").value="Your grade is A+";
+    document.getElementById("txtResult").value=("Outstanding! Keep it up")
+}
+else if(percentage >= 80 && percentage < 90){
+document.getElementById("txtGrade").value=("Your grade is A")
+document.getElementById("txtResult").value=("Very Good")
+}
+else if(percentage >= 70 && percentage < 80){
+document.getElementById("txtGrade").value=("Your grade is B")
+document.getElementById("txtResult").value=("Good")
+}
+else if(percentage >= 60 && percentage < 70){
+document.getElementById("txtGrade").value=("Your grade is C")
+document.getElementById("txtResult").value=("Satisfactory")
+}
+else if(percentage >= 50 && percentage <= 60 ){
+document.getElementById("txtGrade").value=("Your grade is D")
+document.getElementById("txtResult").value=("You Can do better")
+}
+else if(percentage < 50 ){
+document.getElementById("txtGrade").value=("Your grade is F ")
+document.getElementById("txtResult").value=("Unsatisfactory")
+}
+else{
+
+}
+ 
+ 
+
+
+         //display the results	
+         document.getElementById('txtStudentName').value = document.getElementById('txtName').value;
+         document.getElementById('txtStudentClass').value = document.getElementById('txtClass').value;
+         document.getElementById('txtTotalMarks').value = totalMarks;
+         document.getElementById('txtPercentage').value = percentage;
+         
+        
+        
+
+} //end of function getReport
+
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+.twen{
+    background-color: black;
+    border: 2px solid;
+    border-radius: 6px;
+    margin-top: 100px;
+    margin-left: 850px;
+    padding: 9px;
+}
+.twen a{
+    color: white;
+}
+fieldset{
+    margin-left: 600px;
+    border: 3px solid;
+}
+table{
+    margin-left: 1600px;
+}
+legend{
+    text-align: center;
+}
+label{
+    margin-left: 60px;
+}
+input{
+    margin-left: 10px; ;
+}
+table{
+    margin-left: 150px;
+}
+.wee{
+    margin-left: 230px;
+}
+.rep{
+    margin-left: 650px;
+}
+div{
+    margin-left: 600px;
+}
